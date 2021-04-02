@@ -11,9 +11,19 @@ then
 else
     echo "Emptying bucket..."
     aws rm "s3://${BUCKET_NAME}" --recursive
-    echo "Bucket \`${BUCKET_NAME}\` emptied successfully."
+    if [ $? -eq 0 ]; then
+        echo "Bucket \`${BUCKET_NAME}\` emptied successfully."
+    else
+        echo "There was a problem emptying bucket \`${BUCKET_NAME}\`, please read the logs above this message."
+        exit 1
+    fi
 
     echo "Deleting bucket..."
     aws s3api delete-bucket --bucket $BUCKET_NAME
-    echo "Bucket \`${BUCKET_NAME}\` deleted successfully."
+    if [ $? -eq 0 ]; then
+        echo "Bucket \`${BUCKET_NAME}\` deleted successfully."
+    else
+        echo "There was a problem deleting bucket \`${BUCKET_NAME}\`, please read the logs above this message."
+        exit 1
+    fi
 fi

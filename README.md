@@ -12,7 +12,7 @@ This is a sample usage of this action that you can adapt / modify and copy to yo
 
 ```yaml
 - name: Delete bucket in S3
-  uses: aitorres/aws-s3-delete-bucket@v1.1.1
+  uses: aitorres/aws-s3-delete-bucket@v1.2.0
   with:
     bucket-name: 'name-of-my-bucket'
     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
