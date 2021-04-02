@@ -4,7 +4,7 @@ export BUCKET_NAME=$1
 export AWS_ACCESS_KEY_ID=$2
 export AWS_SECRET_ACCESS_KEY=$3
 
-if [ -z "${BUCKET_NAME}" ] || [-z "${AWS_ACCESS_KEY_ID}" ] || [ -z "${AWS_SECRET_ACCESS_KEY}" ]
+if [ -z "${BUCKET_NAME}" ] || [ -z "${AWS_ACCESS_KEY_ID}" ] || [ -z "${AWS_SECRET_ACCESS_KEY}" ]
 then
     echo "Insufficient or improperly configured input for this Github Action"
     exit 1
