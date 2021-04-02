@@ -1,0 +1,23 @@
+name: 'AWS S3 Delete Bucket'
+description: 'Empty and delete an existing bucket in AWS S3 on demand'
+author: 'Andrés Ignacio Torres'
+inputs:
+  bucket-name:
+    description: 'Name of the bucket that will be created (make sure it is the one you want to delete!)'
+    required: true
+  aws-access-key-id:
+    description: 'AWS Access Key ID'
+    required: true
+  aws-secret-access-key:
+    description: 'AWS Secret Access Key'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.bucket-name}}
+    - ${{ inputs.aws-access-key-id }}
+    - ${{ inputs.aws-secret-access-key }}
+branding:
+  icon: 'x-circle'
+  color: 'orange'
