@@ -10,7 +10,7 @@ then
     exit 1
 else
     echo "Emptying bucket..."
-    aws rm "s3://${BUCKET_NAME}" --recursive
+    aws s3 rm "s3://${BUCKET_NAME}" --recursive
     if [ $? -eq 0 ]; then
         echo "Bucket \`${BUCKET_NAME}\` emptied successfully."
     else
