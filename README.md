@@ -12,10 +12,10 @@ This is a sample usage of this action that you can adapt / modify and copy to yo
 
 ```yaml
 - name: Delete bucket in S3
-  uses: aitorres/aws-s3-delete-bucket
+  uses: aitorres/aws-s3-delete-bucket@v1.1.0
   with:
     bucket-name: 'name-of-my-bucket'
-    aws-secret-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 ```
 
@@ -26,7 +26,7 @@ The following are the valid input arguments for this action:
 |Name|Description|
 |----|-----------|
 |`bucket-name`|Name for the new bucket (make sure it's the right one!)|
-|`aws-secret-key-id`|AWS Secret Key ID, part of the credentials to be used during bucket creation. Please pass these through secret environment variables.
+|`aws-access-key-id`|AWS Secret Key ID, part of the credentials to be used during bucket creation. Please pass these through secret environment variables.
 |`aws-secret-access-key`|AWS Secret Access Key, part of the credentials to be used during bucket creation. Please pass these through secret environment variables.
 
 ## Misc
